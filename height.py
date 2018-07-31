@@ -40,22 +40,23 @@ plt.title("Residual Plot using training and test data")
 plt.ylabel("Residuals")
 #plt.show()
 
-print(type(lm.intercept_))
-print(type(lm.coef_))
-intercept = float(lm.intercept_[0])
-print(intercept)
-coef = float(lm.coef_[0])
-print(coef)
+#print(type(lm.intercept_))
+#print(type(lm.coef_))
+intercept = lm.intercept_[0]
+
+coef = lm.coef_[[0]]
+
+
 intercept.astype(int)
 coef.astype(int)
-
-
-#UserWe = input('Enter Weight:')
+print(type(intercept))
+print(type(coef))
+UserWe = input('Enter Weight:')
 def PredictHeight(UserWe):
-    Height = (coef * (UserWe)) + intercept
+    Height = (float(UserWe) *coef) + intercept
     print('Predicted height of the person is:', Height)
     
-#PredictHeight(UserWe)
+PredictHeight(UserWe)
 
 
 
